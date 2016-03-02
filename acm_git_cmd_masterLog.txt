@@ -1,0 +1,481 @@
+*********** february 02,2016 *************
+meglingg@Garfield MINGW64 ~
+$ cd
+
+meglingg@Garfield MINGW64 ~
+$ ls .ssh
+ls: cannot access .ssh: No such file or directory
+
+meglingg@Garfield MINGW64 ~
+$ ssh-keygen -t dsa
+Generating public/private dsa key pair.
+Enter file in which to save the key (/c/Users/meglingg/.ssh/id_dsa):
+Created directory '/c/Users/meglingg/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/meglingg/.ssh/id_dsa.
+Your public key has been saved in /c/Users/meglingg/.ssh/id_dsa.pub.
+The key fingerprint is:
+SHA256:9GvJmydAo7U0AgwoQvkSn6KNLzrrYE5Trv7JeJxRxM0 meglingg@Garfield
+The key's randomart image is:
++---[DSA 1024]----+
+|.ooo. o          |
+|+o  oo E         |
+|o + o.  .        |
+| o + ...*.       |
+|.oo..  *S+.      |
+|o +.  . o. o     |
+|.=..o    .=      |
+|B *+.    ..o.    |
+|*Xo+      oo     |
++----[SHA256]-----+
+
+meglingg@Garfield MINGW64 ~
+$ cd
+
+meglingg@Garfield MINGW64 ~
+$ ls .ssh
+id_dsa  id_dsa.pub
+
+meglingg@Garfield MINGW64 ~
+$ ^C
+
+meglingg@Garfield MINGW64 ~
+$ ls .ssh
+id_dsa  id_dsa.pub
+
+meglingg@Garfield MINGW64 ~
+$ cat .ssh/id_dsa.pub | click
+bash: click: command not found
+
+meglingg@Garfield MINGW64 ~
+$ click .ssh/id_dsa.pub | pbcopy
+bash: click: command not found
+bash: pbcopy: command not found
+
+meglingg@Garfield MINGW64 ~
+$ cat .ssh/id_dsa.pub | clip
+
+meglingg@Garfield MINGW64 ~
+$ cd projects/
+bash: cd: projects/: No such file or directory
+
+meglingg@Garfield MINGW64 ~
+$cd projects/
+
+meglingg@Garfield MINGW64 ~/projects
+$ git clone git@github.com:megling430/bellatrix.git
+Cloning into 'bellatrix'...
+The authenticity of host 'github.com (192.30.252.128)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.252.128' (RSA) to the list of known hosts.
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+meglingg@Garfield MINGW64 ~/projects
+$ cd
+
+meglingg@Garfield MINGW64 ~
+$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/meglingg/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/meglingg/.ssh/id_rsa.
+Your public key has been saved in /c/Users/meglingg/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:0I0iJNdTXWj0wvYL305zSphcwt5afBcXqQ4keBk2EBo meglingg@Garfield
+The key's randomart image is:
++---[RSA 2048]----+
+|  . oE ++*.o.    |
+|   +  =.o+B.    .|
+|    ..ooo==..  o |
+|     . o..o+  . .|
+|        S ..+....|
+|           =oX  o|
+|            B.O +|
+|             * =.|
+|            . o  |
++----[SHA256]-----+
+
+meglingg@Garfield MINGW64 ~
+$ cat .ssh/id_rsa.pub | clip
+
+meglingg@Garfield MINGW64 ~
+$ cd
+
+meglingg@Garfield MINGW64 ~
+$ cd /projects
+bash: cd: /projects: No such file or directory
+
+meglingg@Garfield MINGW64 ~
+$ cd projects
+
+meglingg@Garfield MINGW64 ~/projects
+$ git clone git@github.com:megling430/bellatrix.git
+Cloning into 'bellatrix'...
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (5/5), 4.32 KiB | 0 bytes/s, done.
+Checking connectivity... done.
+
+meglingg@Garfield MINGW64 ~/projects
+$ cd example
+bash: cd: example: No such file or directory
+
+meglingg@Garfield MINGW64 ~/projects
+$ cd bellatrix
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ ls
+LICENSE  README.md
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ git add README.md
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ git commit -m 'follow instructions'
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ git add README.md
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Everything up-to-date
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ ^C
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$
+lscdcdcd be
+
+******************* march 1, 2016 *****************************
+
+meglingg@Garfield MINGW64 /
+$ cd
+
+meglingg@Garfield MINGW64 ~
+$ cd/projects
+bash: cd/projects: No such file or directory
+
+meglingg@Garfield MINGW64 ~
+$ cd\projects
+bash: cdprojects: command not found
+
+meglingg@Garfield MINGW64 ~
+$ cd/bellatrix
+bash: cd/bellatrix: No such file or directory
+
+meglingg@Garfield MINGW64 ~
+$ bellatrix
+bash: bellatrix: command not found
+
+meglingg@Garfield MINGW64 ~
+$ /projects/
+bash: /projects/: No such file or directory
+
+meglingg@Garfield MINGW64 ~
+$ cd
+
+meglingg@Garfield MINGW64 ~
+$ /projects
+bash: /projects: No such file or directory
+
+meglingg@Garfield MINGW64 ~
+$ cd projects
+
+meglingg@Garfield MINGW64 ~/projects
+$ cd bellatrix
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ ls
+LICENSE  README.md
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ ls
+LICENSE  raggle.txt  README.md
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        raggle.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ git add <raggle.txt>
+bash: syntax error near unexpected token `newline'
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ git add raggle.txt
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ ^C
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   raggle.txt
+
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ git commit -m 'added random text file'
+[master 6f873cd] added random text file
+ Committer: Megan Marie <Megan Marie>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 raggle.txt
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Warning: Permanently added the RSA host key for IP address '192.30.252.131' to t            he list of known hosts.
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ cd
+
+meglingg@Garfield MINGW64 ~
+$ ssh-keygen -t dsa
+Generating public/private dsa key pair.
+Enter file in which to save the key (/c/Users/meglingg/.ssh/id_dsa):
+
+meglingg@Garfield MINGW64 ~
+$ ^C
+bash: :s^C: substitution failed
+
+meglingg@Garfield MINGW64 ~
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/meglingg/.ssh/id_rsa):
+/c/Users/meglingg/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/meglingg/.ssh/id_rsa.
+Your public key has been saved in /c/Users/meglingg/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:khPNkqlirQ/r2yumCHDHd0BiiEYB/uANphSe/aS2xj4 meglingg@Garfield
+The key's randomart image is:
++---[RSA 2048]----+
+|+=..o .          |
+|+.=. o =         |
+|.O . .* o        |
+|= =o+. =         |
+|o.+==.= S        |
+|.oo+.. +         |
+|. o+             |
+|o =E             |
+|o+++=.           |
++----[SHA256]-----+
+
+meglingg@Garfield MINGW64 ~
+$ cat .ssh/id_rsa.pub | clip
+
+meglingg@Garfield MINGW64 ~
+$ cd projects
+
+meglingg@Garfield MINGW64 ~/projects
+$ cd bellatrix
+
+meglingg@Garfield MINGW64 ~/projects/bellatrix (master)
+$ cd
+
+meglingg@Garfield MINGW64 ~
+$ projects
+bash: projects: command not found
+
+meglingg@Garfield MINGW64 ~
+$ cd projects
+
+meglingg@Garfield MINGW64 ~/projects
+$ git clone git@github.com:megling430/sample.git
+Cloning into 'sample'...
+Warning: Permanently added the RSA host key for IP address '192.30.252.130' to the list of known hosts.
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (5/5), 4.30 KiB | 0 bytes/s, done.
+Checking connectivity... done.
+
+meglingg@Garfield MINGW64 ~/projects
+$ cd smaple
+bash: cd: smaple: No such file or directory
+
+meglingg@Garfield MINGW64 ~/projects
+$ cd sample
+
+meglingg@Garfield MINGW64 ~/projects/sample (master)
+$ ls
+LICENSE  README.md
+
+meglingg@Garfield MINGW64 ~/projects/sample (master)
+$ git config --global user.name "Megan Clark"
+
+meglingg@Garfield MINGW64 ~/projects/sample (master)
+$ git config --global user.email "megling430@gmail.com"
+
+meglingg@Garfield MINGW64 ~/projects/sample (master)
+$ git add README.md
+
+meglingg@Garfield MINGW64 ~/projects/sample (master)
+$ git commit -m 'because'
+[master 1006992] because
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+meglingg@Garfield MINGW64 ~/projects/sample (master)
+$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 277 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To git@github.com:megling430/sample.git
+   0aab83e..1006992  master -> master
+
+meglingg@Garfield MINGW64 ~/projects/sample (master)
+$ git config push.default
+
+meglingg@Garfield MINGW64 ~/projects/sample (master)
+$ git config --global push.default simple
+
+/easier to make repository on browser then clone/
+// little while later
+
+meglingg@Garfield MINGW64 ~/projects/classPrograms/textbookExample (master)
+$ git add inData.txt
+
+meglingg@Garfield MINGW64 ~/projects/classPrograms/textbookExample (master)
+$ git add outData.txt
+
+meglingg@Garfield MINGW64 ~/projects/classPrograms/textbookExample (master)
+$ git add Source1.cpp
+
+meglingg@Garfield MINGW64 ~/projects/classPrograms/textbookExample (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   Source1.cpp
+        new file:   inData.txt
+        new file:   outData.txt
+
+
+meglingg@Garfield MINGW64 ~/projects/classPrograms/textbookExample (master)
+$ git commit -m 'Project from C++ textbook, page 180'
+[master d098f93] Project from C++ textbook, page 180
+ 3 files changed, 80 insertions(+)
+ create mode 100644 textbookExample/Source1.cpp
+ create mode 100644 textbookExample/inData.txt
+ create mode 100644 textbookExample/outData.txt
+
+meglingg@Garfield MINGW64 ~/projects/classPrograms/textbookExample (master)
+$ git push
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.35 KiB | 0 bytes/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+To git@github.com:megling430/classPrograms.git
+   001be42..d098f93  master -> master
