@@ -1,0 +1,134 @@
+11-10-16
+BILL FRASER
+///felt when "mastering" object orient
+mutability:
+same operations do not always produce the same results
+ you dont have to understand and monitor everything
+ ___
+ 
+ side effects:
+		update a field of obj
+ IN > method > output 	
+ update field in other obj
+ 
+ -changing value of a variable 
+ -writing data to disk
+ -updating user interface
+ -send data across the network
+ -checking system clock (subtle effect), see number with random clock, no longer pure function
+ 
+ ///as felt when learn more about functional programming
+ "simpler to reason about"
+ transformation instead of flow control
+ 
+ OO and procedural programming require that you track variables as morph thru programming
+ instead taking a starting value and apply a series of transformations to get final results
+ ::immutable transformations
+ 
+import scala.util.{Failure, Success, Try}
+sealed trait Location
+case object School extends Location
+case object Home extends Location
+case object Restaurant extends Location
+
+case class Motorcycle(fuel: Int, location: Location)
+
+object MotorcycleFunctions {
+val tripCost = 20
+
+def drive(motorcycle: Motorcycle, destination: Location): Try[Motorcycle] = {
+    motorcycle match {
+    case Motorcycle(_, location) if (location == destination) => Success(motorcycle)
+    case Motorcycle (fuel, _) if (fuel >= tripCost) => Success(Motorcycle(motorcycle.fuel - tripCost, destination))
+    case _ => Failure (new Exception("Ran out of gas!"))
+    }
+  }
+}
+
+val pristineMotorcycle = Motorcycle(100, Home)
+
+In [2]: pristineMotorcycle.copy(fuel=50)
+
+In [3]: pristineMotorcycle.copy(fuel=50).copy(location=School)
+
+val tupleExample = (42, "Hello", 10.0, home)
+tupleExample: (Int, String, Double, home type) = 42, Hello, 10.0, home
+
+
+MUTABLE example
+
+sealed trait Location
+case object School extends Location
+case object Home extends Location
+case object Restaurant extends Location
+
+case class Motorcycle(var fuel: Int, var location: Location) {
+	val tripCost = 20
+	
+	def drive(destinaton: Location): Unit = {
+	if (this.fuel < tripCost)
+		throw new Exception("Out of gas!") // abort
+	this.fuel -= tripCost
+	this.location = destination
+		}
+		}
+case class Person(var name: String, var location: Location) {
+//spot the bug
+	def drive(motorcycle: Motorcycle, destination: Location): Unit = {
+	if (this.location != motorcycle.location){
+	throw new Exception(s"${this.name} is at ${this.location} //[couldn't type fast enough for all the code :( ]
+	}
+}
+	
+	
+PATTERN Matching:
+star with a value, transform it into a new value
+compiler can assist in making sure that you've covered every possibility
+can be moved around as a distinct unit
+
+immutable trans:
+map: apply the same function to every item in a collection, then return a new collection.
+scala definition: def map[B](f: (A) => B): List[B]
+moar map ex:
+blackAndWhiteImg = pixels.map(convertToGrayscale)
+
+properNames = people.map(person.match{
+	case man: Male => "Mr." + man.name
+	case woman: Female => "Mrs." + woman.name
+	
+fold: start with a specific value, and then perform successive transformations, serialized add-on
+ex: deansList = students.fold(emptyList)(analyzeGrades)
+analyze students, if okay then add to list, if unacceptable then skip adding to list
+paint = strokes.fold(blankCanvas)(applyStroke)
+suspiciousTransactions = transactions.fold(emptyList)(applyFraudMetrics)
+
+Seperate behavior from data
+ simple immutable data classes
+ pure functions that manipulate them
+ swap out data classes 
+
+ scala specifics:
+ case classes
+ {not typing fast enough again}
+ 
+ throwing exceptions breaks clean flow as much as gotos
+ 
+ exceptions are valuable, dont just throw them around
+ who knows how many layers that exception will get thrown through before someone realizes that it needs to be caught?
+ ....still not typing fast enough
+ 
+ 
+ mutable, no history, super hard to debug when side effect is reached
+ immutable, all the history, time travelling debugging
+ 
+ SOLUTION REACH
+ www.solutionreach.com/company/careers
+ 
+ 
+ Resources to better quaint self with Scala:
+ coursera course - functional programming principles in scala
+ taught by Martin Odersky, creator of Scala
+ 
+ additional source list: http://blog.codacy.com/2015/07/03/how-to-learn-scala/
+ 
+ 
